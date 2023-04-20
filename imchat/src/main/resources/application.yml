@@ -1,0 +1,19 @@
+server:
+  port: 8014
+spring:
+  application:
+    name: edu-order-boot
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: asasdd
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+      register-with-eureka: true
+      fetch-registry: true
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
